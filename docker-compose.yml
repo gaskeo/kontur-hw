@@ -1,0 +1,31 @@
+version: '2'
+
+services:
+  app:
+    image: 'tikovka72/flask-homework:1.0.3'
+    restart: always
+    build:
+      context: .
+    container_name: flask-hw
+    ports:
+      - "5050:5050"
+    environment:
+      - DB_NAME=db_hw
+      - DB_USER=user_hw
+      - DB_PASSWORD=<password>
+      - DB_PORT=8123
+      - DB_ADDRESS=db
+    depends_on:
+      - db
+  db:
+    restart: always
+    image: 'tikovka72/clickhouse-homework:1.0.0'
+    container_name: db-hw
+    hostname: db
+    ports:
+       - "18123:8123"
+    environment:
+      - CLICKHOUSE_DB=db_hw
+      - CLICKHOUSE_USER=user_hw
+      - CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT=1
+      - CLICKHOUSE_PASSWORD=<password>
