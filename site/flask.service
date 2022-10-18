@@ -1,0 +1,10 @@
+[Unit]
+Description=Flask service
+After=network.target
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/flask-homework
+ExecStart=gunicorn --bind 0.0.0.0:5050 wsgi:app
+[Install]
+WantedBy=multi-user.target

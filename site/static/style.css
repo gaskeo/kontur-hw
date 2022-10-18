@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Josefin+Sans:wght@500&family=Montserrat:wght@300&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    font-size: 5em;
+
+}
+
+table {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 600px;
+    font-size: 3em;
+}
+
+td, th {
+    padding-right: 30px;
+    padding-left: 30px;
+    margin: 0;
+}
+
+table,
+th,
+td {
+    padding: 10px;
+    border-bottom: 2px solid black;
+    border-collapse: collapse;
+    font-family: 'Inconsolata', monospace;
+}
+
+p {
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    color: grey;
+}
+
+thead {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ip {
+    text-align: left;
+}

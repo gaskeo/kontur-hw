@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>blacklist example</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css"/>
+</head>
+<body>
+<h1>Blacklist</h1>
+{% if blocked %}
+<table>
+    <thead>
+    <tr>
+        <th>IP/24</th>
+        <th>Count</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for ip in blocked %}
+    <tr class="tr">
+        <td class="ip">{{ip.ip}}</td>
+        <td>{{ip.count}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>Empty list</p>
+{% endif %}
+</body>
+</html>
